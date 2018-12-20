@@ -11,7 +11,12 @@ export const storeResult = (res) => {
     // Redux-Thunk intercepts the action in a middleware
     // It blocks it and dispatch the synchronous action once
     // dispatch is called
-    return dispatch => {
+
+    /**
+     * Can also pass the current state, in case it needs to be
+     * updated before the action is dispatched
+     */
+    return (dispatch, getState) => {
         setTimeout(() => {
             dispatch(storeResultSync(res))
         }, 2000);
