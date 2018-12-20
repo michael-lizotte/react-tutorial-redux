@@ -1,4 +1,4 @@
-import * as actions from '../actions';
+import * as actions from '../actions/index';
 
 const init = {
     counter: 0
@@ -11,7 +11,7 @@ const reducer = (state = init, action) => {
                 ...state,
                 counter: state.counter + 1
             }
-        case actions.DECREMENET:
+        case actions.DECREMENT:
             return {
                 ...state,
                 counter: state.counter - 1
